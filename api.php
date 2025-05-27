@@ -40,7 +40,7 @@ if ($metodo == 'GET') {
         if (isset($dadosRecebidos['nome']) && isset($dadosRecebidos['email'])) {
             http_response_code(201);
             $novoUsuario = [
-                "id" => time(), // ID simples baseado no timestamp
+                "id" => time(),
                 "nome" => $dadosRecebidos['nome'],
                 "email" => $dadosRecebidos['email'],
                 "mensagem" => "Usuário criado com sucesso (simulado)!"
@@ -60,7 +60,7 @@ if ($metodo == 'GET') {
         ];
     }
 } else {
-    http_response_code(405); // Method Not Allowed
+    http_response_code(405);
     $resposta = [
         "erro" => "Método HTTP não permitido."
     ];
